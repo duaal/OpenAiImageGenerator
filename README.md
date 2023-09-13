@@ -1,8 +1,8 @@
 
+ # Image Generating App Using OpenAi API
+ https://github.com/duaal/OpenAiImageGenerator/assets/40645258/33f41747-3c34-4dbe-8fa4-49d13e3a09dc
 
- # Image-generating app using OpenAi API
-Use To Code
-
+## Build with
 ![Typescript](https://img.shields.io/badge/Typescript-007acc?style=for-the-badge&labelColor=black&logo=typescript&logoColor=007acc)
 ![React](https://img.shields.io/badge/-React-61DBFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DBFB)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-092749?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4&labelColor=000000)
@@ -58,7 +58,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 #### `npm install -D tailwindcss`
 #### `npx tailwindcss init`
 1. Install tailwindcss via npm.
-2. run the init command to generate your tailwind.config.js file.
+2. Run the init command to generate your tailwind.config.js file.
 ### 2. Configure your template paths
 Add the paths to all of your template files in your tailwind.config.js file.
 ````
@@ -106,7 +106,7 @@ Visit  [openAi](https://openai.com/ "Named link title") website and follow the n
   ````
   const apiKey = ""; //add your api key here
   ````
-* creating state variables
+* Creating state variables
   ````
     //Track the prompt text
   const [prompt, setPrompt] = useState<string>();
@@ -116,7 +116,7 @@ Visit  [openAi](https://openai.com/ "Named link title") website and follow the n
   const [loading, setLoading] = useState<Boolean>(false);
  
   ````
-* using Axios to post to theOpenAI API </br>
+* Using Axios to post to theOpenAI API </br>
   installing axios and importing it  `npm install axios` `import Axios from "axios";`
   ````
   const genrateImage = async () => {
