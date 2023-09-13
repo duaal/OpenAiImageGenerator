@@ -6,10 +6,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Image-generating app using OpenAi API</h3>
 
   <p align="center">
-   image generating app using OpenAi API
+  build with react (typescript template) and tailwind
     <br />
 
   </p>
@@ -61,3 +61,48 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# Implementing tailwind with React 
+ ### 1. Install Tailwind CSS
+#### `npm install -D tailwindcss`
+#### `npx tailwindcss init`
+1. Install tailwindcss via npm.
+2. run the init command to generate your tailwind.config.js file.
+### 2. Configure your template paths
+Add the paths to all of your template files in your tailwind.config.js file.
+````
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+````
+
+### 3. Add the Tailwind directives to your CSS
+Add the @tailwind directives for each of Tailwind’s layers to your ./src/index.css file.
+````
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+````
+### 4. Start your build process
+#### `npm run start`
+Run your build process with npm run start.
+
+#Building Process
+
+### 1. To get your APIKey 
+, visit  [openAi](https://openai.com/ "Named link title") website and follow the next steps
+* Create an account and choose API
+* From your profile, choose View API Keys.
+* Create an API Key and save it somewhere on your computer; `you will not be able to copy your API again`.
+
