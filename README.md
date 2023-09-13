@@ -1,20 +1,11 @@
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">Image-generating app using OpenAi API</h3>
+ # Image-generating app using OpenAi API
+Use To Code
 
-  <p align="center">
-  build with react (typescript template) and tailwind
-    <br />
-
-  </p>
-</div>
-
+![Typescript](https://img.shields.io/badge/Typescript-007acc?style=for-the-badge&labelColor=black&logo=typescript&logoColor=007acc)
+![React](https://img.shields.io/badge/-React-61DBFB?style=for-the-badge&labelColor=black&logo=react&logoColor=61DBFB)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-092749?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4&labelColor=000000)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -98,11 +89,79 @@ Add the @tailwind directives for each of Tailwind’s layers to your ./src/index
 #### `npm run start`
 Run your build process with npm run start.
 
-#Building Process
+# Building Process
 
-### 1. To get your APIKey 
-, visit  [openAi](https://openai.com/ "Named link title") website and follow the next steps
+### 1. Obtaining your APIKey 
+
+Visit  [openAi](https://openai.com/ "Named link title") website and follow the next steps
 * Create an account and choose API
 * From your profile, choose View API Keys.
 * Create an API Key and save it somewhere on your computer; `you will not be able to copy your API again`.
+![tempsnip](https://github.com/duaal/OpenAiImageGenerator/assets/40645258/7aeb1c07-ed62-4cc1-9fdd-e1e61914d782)
+![tempsnip2](https://github.com/duaal/OpenAiImageGenerator/assets/40645258/ebca8e6d-55ee-467f-8620-ac09a87d27c1)
+![tempsnip3](https://github.com/duaal/OpenAiImageGenerator/assets/40645258/84552885-79ad-49c3-af89-f45f6c2487a3)
+### 2. Image generating function
+
+* Creating a variable to hold our key
+  ````
+  const apiKey = ""; //add your api key here
+  ````
+* creating state variables
+  ````
+    //Track the prompt text
+  const [prompt, setPrompt] = useState<string>();
+  //setting image URL
+  const [imageUrl, setImageUrl] = useState<string>("");
+  //loading state
+  const [loading, setLoading] = useState<Boolean>(false);
+ 
+  ````
+* using Axios to post to theOpenAI API </br>
+  installing axios and importing it  `npm install axios` `import Axios from "axios";`
+  ````
+  const genrateImage = async () => {
+    try {
+      setLoading(true);
+      //using Axios to post
+      const response = await Axios.post(
+        " https://api.openai.com/v1/images/generations",
+        { prompt: prompt, n: 1, size: "256x256" },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+      
+    } catch (error) {
+      console.log(error);
+    }
+  ````
+* Getting the image URL
+  ````
+  const genrateImage = async () => {
+    try {
+      setLoading(true);
+      //using Axios to post
+      const response = await Axios.post(
+        " https://api.openai.com/v1/images/generations",
+        { prompt: prompt, n: 1, size: "256x256" },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+        }
+      );
+      const dataUrl = response.data.data;
+      // setting the image url
+    setImageUrl(dataUrl[0].url);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  ````
+
+
 
