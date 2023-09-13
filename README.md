@@ -1,5 +1,19 @@
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Best-README-Template</h3>
+
+  <p align="center">
+   image generating app using OpenAi API
+    <br />
+
+  </p>
+</div>
 
 # Getting Started with Create React App
 
